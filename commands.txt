@@ -1,15 +1,11 @@
 # Buildar as imagens
 docker build -t gs_service -f docker/Dockerfile.gs .
 docker build -t pdftotext_service -f docker/Dockerfile.pdftotext .
-docker build -t log_service -f docker/Dockerfile.log .
-
 docker build -t app_service -f docker/Dockerfile.app .
 
 # Rodar os containers
 docker run -d --name gs_service -p 5002:5002 gs_service
 docker run -d --name pdftotext_service -p 5003:5003 pdftotext_service
-docker run -d --name log_service -p 5004:5004 log_service
-
 docker run -d --name app_service -p 5000:5000 app_service
 
 
